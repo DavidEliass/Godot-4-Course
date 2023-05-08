@@ -37,7 +37,7 @@ func _physics_process(delta: float) -> void:
 	sprite.animate(velocity)
 			
 func knockback_move() -> void:
-		velocity = knockback_direction * move_speed * 2
+		velocity = knockback_direction * 25.0 * 2
 		var _move := move_and_slide() 
 		sprite.animate(velocity) 
 
@@ -75,10 +75,13 @@ func update_health(target_position: Vector2, value: int, type: String) -> void:
 			on_knockback = true
 		
 			health = clamp(health - value,0, max_health)
+			
+			if health == 0:
+				is_dead = true
+				sprite.action_behavior("dead")
+			
 			return
 		if type == "increase":
 			health = clamp(health + value, 0, max_health)
 		
-		if health == 0:
-			is_dead = true
-			sprite.action_behavior("dead")
+

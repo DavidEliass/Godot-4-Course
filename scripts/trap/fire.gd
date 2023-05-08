@@ -23,4 +23,3 @@ func on_state_timer_timeout():
 func on_detection_area_body_entered(body):
 	if body.is_in_group("player"):
 		body.update_health(global_position, damage, "decrease")
-	

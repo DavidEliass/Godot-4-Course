@@ -48,5 +48,5 @@ func on_animation_finished(_anim_name: String) -> void:
 	if _anim_name == "hit":
 		player.on_knockback = false
 		
-	if animation.name == "dead":
-		var _reload: bool = get_tree().reload_current_scene()
+	if _anim_name == "dead":
+		var reload: bool = get_tree().reload_current_scene()
