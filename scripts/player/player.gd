@@ -37,6 +37,7 @@ func _physics_process(delta: float) -> void:
 	sprite.animate(velocity)
 			
 func knockback_move() -> void:
+		velocity = knockback_direction * move_speed * 2
 		var _move := move_and_slide() 
 		sprite.animate(velocity) 
 

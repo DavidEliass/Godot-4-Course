@@ -45,7 +45,7 @@ func horizontal_move_behavior(direction: float) -> void:
 func on_animation_finished(_anim_name: String) -> void:
 	on_action = false
 	
-	if animation.name == "hit":
+	if _anim_name == "hit":
 		player.on_knockback = false
 		
 	if animation.name == "dead":
